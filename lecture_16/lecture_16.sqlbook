@@ -36,7 +36,7 @@ panel on the left:
 
 Delete existing table
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@postgres
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- If the table already exists we can drop it:
 -- If it doesn't exist nothing happens
 -- System commands are in upper case and user defined
@@ -85,6 +85,7 @@ View the table in the VSC "Database" Panel
 $\qquad$ <img src="figures/view_table_sql.png" alt="drawing" width="350"/>
 
 -- SQLBook: Code
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- In SQL, a set of tables is called a "Schema"
 -- Click "refresh" to see changes
 -- The pencil button edits column attributes
@@ -175,6 +176,7 @@ ORDER BY victories DESC;
 
 
 -- SQLBook: Code
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- The following code would NOT work because we used double quotations
 -- "Double quotations" are used to refer to column names
 SELECT * FROM drivers 

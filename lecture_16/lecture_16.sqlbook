@@ -36,7 +36,7 @@ panel on the left:
 
 Delete existing table
 -- SQLBook: Code
--- Active: 1710903290079@@127.0.0.1@5432@postgres
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- If the table already exists we can drop it:
 -- If it doesn't exist nothing happens
 -- System commands are in upper case and user defined
@@ -49,13 +49,14 @@ DROP TABLE IF EXISTS drivers;
 
 Create empty table from codebook
 -- SQLBook: Code
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
 
 CREATE TABLE drivers(
     driver_id int,
-    driver_name varchar(30),
+    driver_name varchar(30), #columnname is driver name and columntype is varchar 
     nationality varchar(15),
     victories int
 );    
@@ -64,6 +65,7 @@ CREATE TABLE drivers(
 
 Add rows to table
 -- SQLBook: Code
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- "INSET INTO" adds rows with VALUES ... to the bottom of the table
 -- In SQL different lines need to be separated by a semicolon ";"
 -- You write system commands in capital letters to easily distinguish
@@ -102,7 +104,6 @@ Try it yourself!
 
 INSERT INTO drivers VALUES (5, 'Max Verstappen', 'Dutch', 51);
 INSERT INTO drivers VALUES (6, 'Juan Pablo Montoya', 'Colombian', 6);
-
 INSERT INTO drivers VALUES (7, 'Alejandro Sanchez Becerra','Colombian',2000);
 
 -- SQLBook: Markup
@@ -116,14 +117,14 @@ Extracting columns from table
 -- SELECT extracts certain COLUMNS
 -- FROM is used to indicate the source table
 
-SELECT driver_id, nationality FROM drivers;
+SELECT driver_id, nationality FROM drivers; #extract column driver_id from the drivers table 
 -- SQLBook: Markup
 <font size="5"> 
 
 Extract all columns from table
 -- SQLBook: Code
 -- The symbol "*" is a shorthand for "all variables"
-SELECT * FROM drivers;
+SELECT * FROM drivers; #select all the variables from the drivers table
 -- SQLBook: Markup
 <font size = "5">
 
@@ -131,7 +132,7 @@ Subsetting rows
 -- SQLBook: Code
 -- The WHERE command evaluates logical conditions to subset rows
 SELECT * FROM drivers
-WHERE nationality = 'German';
+WHERE nationality = 'German'; 
 
 -- Evalute OR conditions
 SELECT * FROM drivers
@@ -190,7 +191,9 @@ Try it yourself!
 with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
-SELECT driver_name, nationality, driver_id, victories FROM drivers;
+SELECT driver_name, nationality, driver_id, victories 
+FROM drivers
+WHERE victories > 60;
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> III. Groupby + Chaining </span>
@@ -213,6 +216,7 @@ GROUP BY nationality;
 
 Subsetting **after** aggregating
 -- SQLBook: Code
+-- Active: 1711392344998@@127.0.0.1@5432@postgres
 -- This command computes the same table as above
 -- then filters with HAVING
 -- HAVING is the command you use to subset *after* aggregating
